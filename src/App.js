@@ -3,6 +3,7 @@ import axios from 'axios';
 import MusicTable from './Components/MusicTable/MusicTable';
 import './App.css'
 import SongForm from './Components/SongForm/SongForm';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
 
@@ -16,6 +17,13 @@ function App() {
     }
   }
 
+  // useEffect(() => {
+  //   const filteredSongs = songs.filter((song) => song.title.toLowerCase().includes('sun'))
+  //   setSongs(songs => filteredSongs);
+  //   console.log(filteredSongs)
+  // }, [songs])
+
+
   useEffect(() => {
     getAllSongs();
   }, [])
@@ -27,6 +35,7 @@ function App() {
   }
   return (
     <div >
+      <SearchBar songs={songs} setSongs={setSongs}/>
       <MusicTable songs={songs}/>
       <SongForm addNewSong={addNewSong}/>
     </div>

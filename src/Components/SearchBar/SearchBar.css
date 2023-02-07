@@ -1,8 +1,7 @@
-body {
-    background-color: aquamarine;
-}
 
-#root {
+
+#search {
+    width: 40%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;

@@ -19,6 +19,11 @@ const SongForm = (props) => {
             genre: genre,
         }
         props.addNewSong(newSong);
+        setTitle('')
+        setArtist('')
+        setAlbum('')
+        setReleaseDate('')
+        setGenre('')
     }
 
     return (

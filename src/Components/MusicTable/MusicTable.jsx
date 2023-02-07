@@ -2,9 +2,7 @@ import MusicTableRow from '../MusicTableRow/MusicTableRow';
 import './MusicTable.css'
 
 const MusicTable = ({ songs }) => {
-    const rows = songs.map((song) => {
-        return (<MusicTableRow song={song}/>);
-    })
+    const rows = songs.map((song) => <MusicTableRow song={song}/>)
 
     return (
         <section id='music-table'>
