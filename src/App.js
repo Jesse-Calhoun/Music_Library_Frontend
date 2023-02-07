@@ -10,19 +10,11 @@ function App() {
   const [songs, setSongs] = useState([])
 
   async function addNewSong(song) {
-    // let updatedSongs = [...songs, song];
     let response = await axios.post('http://127.0.0.1:8000/api/music/', song)
     if (response.status === 201){
       await getAllSongs(); 
     }
   }
-
-  // useEffect(() => {
-  //   const filteredSongs = songs.filter((song) => song.title.toLowerCase().includes('sun'))
-  //   setSongs(songs => filteredSongs);
-  //   console.log(filteredSongs)
-  // }, [songs])
-
 
   useEffect(() => {
     getAllSongs();

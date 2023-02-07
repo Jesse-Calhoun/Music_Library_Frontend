@@ -7,28 +7,15 @@ const SearchBar = ({songs, setSongs}) => {
         setCategory(category)
     }
 
-    function filterSongs(songFilteredSelection){
-        let filteredSongs = songs.filter((song) => song[category]===songFilteredSelection);
+    function filterSongs(filterSelection){
+        let filteredSongs = songs.filter((song) => song[category] === filterSelection);
         setSongs(filteredSongs)
     }
 
-    // return ( 
-    //     <section id="search">
-    //         <select value={category} onChange={(event) => setCategory(event.target.value)}>
-    //             <option value="title">title</option>
-    //             <option value="artist">artist</option>
-    //             <option value="album">album</option>
-    //             <option value="release_date">release date</option>
-    //             <option value="genre">genre</option>
-    //         </select>
-    //         <select onChange={(event) => setFilteredSongs(event.target.value)} ></select>
-    //     </section>
-    //  );
      return ( 
         <div onSubmit={filterSongs}>
             <label>Select Category</label>
-            <select id='search' onChange={(event) => changeFilter(event.target.value)}
-            value={category}>
+            <select id='search' onChange={(event) => changeFilter(event.target.value)} value={category}>
                 <option value=''>All</option>
                 <option value='title'>Title</option>
                 <option value='artist'>Artist</option>
